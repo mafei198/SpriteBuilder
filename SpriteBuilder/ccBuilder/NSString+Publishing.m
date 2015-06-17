@@ -149,7 +149,7 @@
 - (BOOL) containsCCBFile:(NSString*) dir
 {
     NSFileManager* fm = [NSFileManager defaultManager];
-    NSArray* files = [fm contentsOfDirectoryAtPath:self error:NULL];
+    NSArray* files = [fm contentsOfDirectoryAtPath:dir error:NULL];
     NSArray* resIndependentDirs = [ResourceManager resIndependentDirs];
 
     for (NSString* file in files) {
