@@ -6023,7 +6023,6 @@
 				7789ABBC133AA82000CEFCC7 /* Resources */,
 				776C6897138878FB00153214 /* Copy Files (Sparkle framework) */,
 				E3B7AED414E31E5D00DFD402 /* Copy PlugIns */,
-				83957E671A432C8600134002 /* Code Signing */,
 			);
 			buildRules = (
 			);
@@ -7303,20 +7302,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83957E671A432C8600134002 /* Code Signing */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Code Signing";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n\n#if [ -z \"${CODE_SIGN_IDENTITY}\" ]; then\n#echo \"Not code signing: No code signing identity set\"\n#exit 0\n#fi\n\nCONTENTSDIR=\"${BUILT_PRODUCTS_DIR}\"/\"${CONTENTS_FOLDER_PATH}\"\nFRAMEWORKSLOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n\n# frameworks\n#codesign --verbose --force --sign \"${CODE_SIGN_IDENTITY}\" \"$FRAMEWORKSLOCATION/HockeySDK.framework/Versions/A/Frameworks/CrashReporter.framework\"\n#codesign --verbose --force --sign \"${CODE_SIGN_IDENTITY}\" \"$FRAMEWORKSLOCATION/HockeySDK.framework/Versions/A\"\n\n#### binaries\necho `pwd`\n\nfor f1 in \"lame\" \"ccz\" \"oggenc\" \"pngquant\" \"optipng\"\ndo\ncodesign --verbose --force --entitlements /Users/Lidholt/Projects/SpriteBuilder/SpriteBuilder/SpriteBuilder.entitlements --sign \"3rd Party Mac Developer Application: Apportable Inc. (U2K5E32W7G)\" \"$CONTENTSDIR/Resources/$f1\"\ndone\n\n# plugins\n#PLUGINFILES=\"$CONTENTSDIR/PlugIns/*\"\n#for f2 in $PLUGINFILES\n#do\n#codesign --verbose --force --sign \"${CODE_SIGN_IDENTITY}\" \"$f2\"\n#done";
-		};
 		DC3DD33018A948560004D2AC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -7328,7 +7313,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n# This script updates the generated Xcode projects...\n# Uncomment the lines as needed. Avoid committing comment changes.\n\n# Updates Cocos2D Project ....\n#\"$SRCROOT/../scripts/GenerateTemplateProject.sh\" PROJECTNAME\n# Updates Sprite Kit Project ....\n#\"$SRCROOT/../scripts/GenerateTemplateProject.sh\" SPRITEKITPROJECTNAME\n";
+			shellScript = "#!/bin/bash\n# This script updates the generated Xcode projects...\n# Uncomment the lines as needed. Avoid committing comment changes.\n\n# Updates Cocos2D Project ....\n#\"$SRCROOT/../scripts/GenerateTemplateProject.sh\" PROJECTNAME\n# Updates Sprite Kit Project ....\n#\"$SRCROOT/../scripts/GenerateTemplateProject.sh\" SPRITEKITPROJECTNAME\n\n\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -8338,8 +8323,8 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = SpriteBuilder.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8390,8 +8375,8 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = SpriteBuilder.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -8550,8 +8535,8 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = NonSandboxed.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
