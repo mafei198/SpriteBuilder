@@ -1193,7 +1193,7 @@ typedef enum
             ResolutionSetting* settingTablet = [settingDefault copy];
             settingTablet.name = @"Tablet";
             settingTablet.scale = projectSettings.tabletPositionScaleFactor;
-            settingTablet.ext = @"tablet phonehd";
+            settingTablet.ext = @"tablet phonehd ipad";
             [updatedResolutions addObject:settingTablet];
         }
     }
