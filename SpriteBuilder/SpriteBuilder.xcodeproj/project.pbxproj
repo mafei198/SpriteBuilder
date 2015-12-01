@@ -73,7 +73,6 @@
 		7789ABE8133AB10500CEFCC7 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7789ABE7133AB10500CEFCC7 /* ApplicationServices.framework */; };
 		7789ABEA133AB10E00CEFCC7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7789ABE9133AB10E00CEFCC7 /* QuartzCore.framework */; };
 		7789ABEC133AB12000CEFCC7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7789ABEB133AB12000CEFCC7 /* OpenGL.framework */; };
-		7789ABEE133AB12F00CEFCC7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7789ABED133AB12F00CEFCC7 /* libz.dylib */; };
 		7789ACEA133AB47A00CEFCC7 /* CocosScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7789ACE9133AB47A00CEFCC7 /* CocosScene.m */; };
 		7789ACEF133AB6A700CEFCC7 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7789ACED133AB6A700CEFCC7 /* icon.icns */; };
 		7789ACF1133BD5E800CEFCC7 /* header-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7789ACF0133BD5E800CEFCC7 /* header-bg.png */; };
@@ -655,6 +654,8 @@
 		B7F02D4817D12DB1008A2E2D /* about-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F02D4617D12DB1008A2E2D /* about-bg.png */; };
 		B7F02D4917D12DB1008A2E2D /* about-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F02D4717D12DB1008A2E2D /* about-bg@2x.png */; };
 		B7F02D4C17D13332008A2E2D /* CCBTransparentWindowDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F02D4B17D13332008A2E2D /* CCBTransparentWindowDraggable.m */; };
+		D030D9D31C0DD5A300F6E727 /* SpriteBuilder.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7789ABBE133AA82000CEFCC7 /* SpriteBuilder.app */; };
+		D0D119591C0DCF2200F62C87 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D119581C0DCF2200F62C87 /* libz.tbd */; };
 		D285465D1A3C3A9000569C56 /* CCBPEffectOutline.m in Sources */ = {isa = PBXBuildFile; fileRef = D285465C1A3C3A9000569C56 /* CCBPEffectOutline.m */; };
 		D28546601A3C3D6300569C56 /* EffectOutlineControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D285465F1A3C3D6300569C56 /* EffectOutlineControl.m */; };
 		D28546641A3C41C600569C56 /* EffectHueControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28546631A3C41C600569C56 /* EffectHueControl.xib */; };
@@ -1326,6 +1327,16 @@
 			dstSubfolderSpec = 10;
 			files = (
 				830F4ECB193486E5002B832D /* OCMock.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0D1195A1C0DD09800F62C87 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Applications;
+			dstSubfolderSpec = 0;
+			files = (
+				D030D9D31C0DD5A300F6E727 /* SpriteBuilder.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2217,6 +2228,7 @@
 		B7F02D4717D12DB1008A2E2D /* about-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-bg@2x.png"; sourceTree = "<group>"; };
 		B7F02D4A17D13332008A2E2D /* CCBTransparentWindowDraggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBTransparentWindowDraggable.h; sourceTree = "<group>"; };
 		B7F02D4B17D13332008A2E2D /* CCBTransparentWindowDraggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBTransparentWindowDraggable.m; sourceTree = "<group>"; };
+		D0D119581C0DCF2200F62C87 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D285465B1A3C3A9000569C56 /* CCBPEffectOutline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCBPEffectOutline.h; path = ccBuilder/CCBPEffectOutline.h; sourceTree = "<group>"; };
 		D285465C1A3C3A9000569C56 /* CCBPEffectOutline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCBPEffectOutline.m; path = ccBuilder/CCBPEffectOutline.m; sourceTree = "<group>"; };
 		D285465E1A3C3D6300569C56 /* EffectOutlineControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EffectOutlineControl.h; path = ccBuilder/EffectOutlineControl.h; sourceTree = "<group>"; };
@@ -2930,6 +2942,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D119591C0DCF2200F62C87 /* libz.tbd in Frameworks */,
 				B77582D01A76CE7A00C8589F /* IOKit.framework in Frameworks */,
 				5B321CC91A5B458800A7C779 /* QuickLook.framework in Frameworks */,
 				D35E589E18E391DA008571EC /* GLKit.framework in Frameworks */,
@@ -2946,7 +2959,6 @@
 				E3E0878E15669F58008F1FDB /* JavaScriptCore.framework in Frameworks */,
 				776A37161395925D00960E94 /* Quartz.framework in Frameworks */,
 				77D33E95138E714700012A88 /* ExceptionHandling.framework in Frameworks */,
-				7789ABEE133AB12F00CEFCC7 /* libz.dylib in Frameworks */,
 				7789ABEC133AB12000CEFCC7 /* OpenGL.framework in Frameworks */,
 				7789ABEA133AB10E00CEFCC7 /* QuartzCore.framework in Frameworks */,
 				7789ABE8133AB10500CEFCC7 /* ApplicationServices.framework in Frameworks */,
@@ -3823,6 +3835,7 @@
 		7789ABC1133AA82000CEFCC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0D119581C0DCF2200F62C87 /* libz.tbd */,
 				B77582CF1A76CE7A00C8589F /* IOKit.framework */,
 				5B321CC81A5B458800A7C779 /* QuickLook.framework */,
 				830F4EB019347032002B832D /* OCMock.framework */,
@@ -6071,12 +6084,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7789ABDC133AA82000CEFCC7 /* Build configuration list for PBXNativeTarget "SpriteBuilder" */;
 			buildPhases = (
-				DC3DD33018A948560004D2AC /* ShellScript */,
+				DC3DD33018A948560004D2AC /* Run Script */,
 				7789ABBA133AA82000CEFCC7 /* Sources */,
 				7789ABBB133AA82000CEFCC7 /* Frameworks */,
 				7789ABBC133AA82000CEFCC7 /* Resources */,
 				776C6897138878FB00153214 /* Copy Files (Sparkle framework) */,
 				E3B7AED414E31E5D00DFD402 /* Copy PlugIns */,
+				D0D1195A1C0DD09800F62C87 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -7386,13 +7400,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DC3DD33018A948560004D2AC /* ShellScript */ = {
+		DC3DD33018A948560004D2AC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -8467,7 +8482,7 @@
 				PROVISIONING_PROFILE = "";
 				SBPRO_PRIVATE_KEY = "fake_private_key___________________________=";
 				SB_VERSION = 1.2.0;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -8519,7 +8534,7 @@
 				PROVISIONING_PROFILE = "";
 				SBPRO_PRIVATE_KEY = "fake_private_key___________________________=";
 				SB_VERSION = 1.2.0;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -8683,7 +8698,7 @@
 				PROVISIONING_PROFILE = "";
 				SBPRO_PRIVATE_KEY = "fake_private_key___________________________=";
 				SB_VERSION = 1.2.0;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
