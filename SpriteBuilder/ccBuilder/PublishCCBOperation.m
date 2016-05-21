@@ -86,6 +86,11 @@
     }
 
     [self validateJointsInDocument:doc];
+    
+    NSMutableDictionary *nodeGraph = doc[@"nodeGraph"];
+    nodeGraph = (NSMutableDictionary *)CFBridgingRelease(CFPropertyListCreateDeepCopy(kCFAllocatorDefault, (CFPropertyListRef)nodeGraph, kCFPropertyListMutableContainersAndLeaves));
+    [self deqeueFolderPathFromResources:nodeGraph];
+    doc[@"nodeGraph"] = nodeGraph;
 
     // Export file
     plugIn.projectSettings = _projectSettings;
@@ -106,6 +111,30 @@
     }
 
     return YES;
+}
+
+- (void)deqeueFolderPathFromResources: (NSMutableDictionary *)node
+{
+    for (NSString *key in node) {
+        if ([key isEqualToString:@"children"]) {
+            NSArray *value = node[key];
+            for (NSMutableDictionary *child in value)
+                [self deqeueFolderPathFromResources:child];
+        }
+        else if (![key isEqualToString:@"properties"]) continue;
+        NSDictionary *value = node[key];
+        for (NSMutableDictionary *property in value) {
+            if ([property[@"type"] isEqualToString:@"SpriteFrame"]) {
+                NSString *propertySpriteFrameName = property[@"value"][1];
+                property[@"value"][1] = [propertySpriteFrameName lastPathComponent];
+            }
+            else if ([property[@"type"] isEqualToString:@"CCBFile"] ||
+                     [property[@"type"] isEqualToString:@"FontTTF"]) {
+                NSString *propertySpriteFrameName = property[@"value"];
+                property[@"value"] = [propertySpriteFrameName lastPathComponent];
+            }
+        }
+    }
 }
 
 - (void)validateJointsInDocument:(NSMutableDictionary *)document
